@@ -2,27 +2,28 @@ package com.iza.ppc.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.time.LocalDateTime;
+/**
+ * Class representing a program
+ *
+ * @author Zakhar Izverov
+ * created on 04.10.2021
+ */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Program {
 
-    private Long id;
+    private String id;
     private String title;
-
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
-
     private TvShow tvShow;
 
     public Program() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -32,22 +33,6 @@ public class Program {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public LocalDateTime getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalDateTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
     }
 
     public TvShow getTvShow() {
@@ -63,8 +48,6 @@ public class Program {
         return "Program{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
                 ", tvShow=" + tvShow +
                 '}';
     }
